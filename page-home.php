@@ -11,14 +11,14 @@ get_header();
 			$background_medium = wp_get_attachment_image_src($imagem_id, 'medium');
 		?>
 
-		<style>
+		<style type="text/css">
 			.introducao {
-				background: url('<?php echo $background_large[0] ?>') no-repeat-center;
+				background: url('<?php echo $background_large[0] ?>') no-repeat center;
 			}
 
 			@media only screen and (max-width: 767px) {
 				.introducao {
-					background: url('<?php echo $background_medium[0] ?>') no-repeat-center;
+					background: url('<?php echo $background_medium[0] ?>') no-repeat center;
 				}
 			}
 		</style>
