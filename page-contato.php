@@ -13,7 +13,7 @@ get_header();
 		</section>
 
 		<section class="contato container animar-interno">
-			<form action="enviar.php" method="post" name="form" class="formphp contato_form grid-8">
+			<form action="<?php echo get_template_directory_uri(); ?>/enviar.php" method="post" name="form" class="formphp contato_form grid-8">
 				<label for="nome">Nome</label>
 				<input id="nome" name="nome" type="text">
 				<label for="email">E-mail</label>
@@ -34,16 +34,11 @@ get_header();
 
 			<div class="contato_dados grid-8">
 				<h3>Dados</h3>
-				<span>+55 21 9999-9999</span>
-				<span>orcamento@bikcraft.com</span>
-				<span>Rua Ali Perto - Botafogo</span>
-				<span>Rio de Janeiro - RJ - Brasil</span>
+				<span><?php the_field('telefone'); ?></span>
+				<span><?php the_field('email'); ?></span>
+				<span><?php the_field('endereco1'); ?></span>
+				<span><?php the_field('endereco2'); ?></span>
 				<h3>Redes Sociais</h3>
-				<ul>
-					<li><a href="http://facebook.com" target="_blank"><img src="img/redes-sociais/facebook.png" alt="Facebook Bikcraft"></a></li>
-					<li><a href="http://instagram.com" target="_blank"><img src="img/redes-sociais/instagram.png" alt="Instagram Bikcraft"></a></li>
-					<li><a href="http://twitter.com" target="_blank"><img src="img/redes-sociais/twitter.png" alt="Twitter Bikcraft"></a></li>
-				</ul>
 			</div>
 		</section>
 
