@@ -2,15 +2,15 @@
 
 <style>
 	.quebra {
-		background: url("<?php the_field('background_footer'); ?>") no-repeat center;
+		background: url("<?php the_field('background_footer', $contato); ?>") no-repeat center;
 		background-size: cover;
 	}
 </style>
 
 <div class="quebra">
     <blockquote class="quote-externo container">
-        <?php the_field('frase_footer'); ?>
-        <cite><?php the_field('autor_footer'); ?></cite>
+        <?php the_field('frase_footer', $contato); ?>
+        <cite><?php the_field('autor_footer', $contato); ?></cite>
     </blockquote>
 </div>
 
