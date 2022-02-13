@@ -58,6 +58,7 @@ get_header();
 						</a>
 					</li>
 				<?php endwhile; else: endif; ?>
+				<?php wp_reset_query(); wp_reset_postdata(); ?>
 			</ul>
 
 			<div class="call">
