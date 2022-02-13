@@ -4,6 +4,18 @@ get_header();
 ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
+		<?php
+			$args = array (
+				'post_type' => 'produtos',
+				'order'   => 'ASC'
+			);
+			$the_query = new WP_Query ( $args );
+		?>
+
+		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			<h1><?php the_title(); ?></h1>
+		<?php endwhile; else: endif; ?>
+
 		<section class="container produto_item animar-interno">
 			<div class="grid-11">
 				<img src="<?php the_field('foto_produto1'); ?>" alt="Bikcraft <?php the_title(); ?>">
@@ -37,21 +49,7 @@ get_header();
 
 					<button id="enviar" name="enviar" type="submit" class="btn">Enviar</button>
 				</form>
-				<div class="orcamento_dados grid-8">
-					<?php $contato = get_page_by_title('contato'); ?>
-					<h3>Dados</h3>
-					<span><?php the_field('telefone', $contato); ?></span>
-					<span><?php the_field('email', $contato); ?></span>
-					<h3>Monte a sua Bikcraft</h3>
-					<p>Escolha as especificações:</p>
-					<ul>
-						<li>- Cores</li>
-					<li>- Estilo</li>
-					<li>- Medidas</li>
-					<li>- Acessórios</li>
-					<li>- E Outros</li>
-					</ul>
-				</div>
+				<?php include(TEMPLATEPATH . "/inc/produtos-orcamento.php"); ?>
 			</div>
 		</section>
 	<?php endwhile; else: endif; ?>
