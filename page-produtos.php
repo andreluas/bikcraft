@@ -14,7 +14,6 @@ get_header();
 		?>
 
 		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-			
 			<section class="container produto_item animar-interno">
 				<a href="<?php the_permalink(); ?>">
 					<div class="grid-11">
