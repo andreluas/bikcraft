@@ -2,10 +2,12 @@
 // Template Name: Sobre
 get_header();
 ?>
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	
 		<?php include(TEMPLATEPATH . "/inc/introducao.php"); ?>
 
-		<section class="missao_sobre container animar-interno">
+		<section class="missao_sobre container fadeInDown" data-anime="1200">
 			<div class="grid-10">
 				<h2 class="subtitulo-interno">História, Missão e Visão</h2>
 				<?php the_field('missao'); ?>
@@ -21,7 +23,7 @@ get_header();
 
 		</section>
 
-		<?php include(TEMPLATEPATH . "/inc/qualidade.php"); ?>
-	<?php endwhile; else: endif; ?>
+		<?php include(get_template_directory() . "/inc/qualidade.php"); ?>
+<?php endwhile; else: endif; ?>
 
 <?php get_footer(); ?>
