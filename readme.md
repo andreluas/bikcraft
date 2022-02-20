@@ -37,7 +37,7 @@ Tanto o **wireframe** quanto o **design** do projeto **Bikcraft** foram desenvol
 
 ```bash
 # Clone o repositório
-git clone https://github.com/devMagno/bikcraft
+git clone https://github.com/andreluas/bikcraft
 
 # Entre no diretório
 cd bikcraft
